@@ -44,6 +44,9 @@ jobs:
           CIBW_BEFORE_ALL_MACOS: |
             set -eu
             if [ "$CMAKE_OSX_ARCHITECTURES" == "arm64" ]; then
+              # Uninstall libpng so we can get the correct version
+              dependent_packages=$(brew uses --installed libpng)
+              brew uninstall --ignore-dependencies $dependent_packages libpng
               PACKAGES=(libpng libaec eigen hdf5)
               for PACKAGE in "${PACKAGES[@]}"
               do
