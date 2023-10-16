@@ -38,7 +38,7 @@ pushd DAGMC
 cmake -S . -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_TALLY=ON \
-    -DMOAB_DIR=../moab/build \
+    -DMOAB_DIR=/usr/local \
     -DBUILD_STATIC_LIBS=OFF
 cmake --build build -j $NUM_CORES
 sudo cmake --build build -t install
