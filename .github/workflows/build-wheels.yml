@@ -1,4 +1,4 @@
-name: Release
+name: Build Wheels
 
 on: [push, workflow_dispatch]
 
@@ -33,6 +33,7 @@ jobs:
           CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28
           CIBW_ENVIRONMENT_LINUX: LD_LIBRARY_PATH="/usr/local/lib64:${LD_LIBRARY_PATH}" PIP_ONLY_BINARY="numpy"
           CIBW_BEFORE_ALL_LINUX: |
+            set -eu
             dnf install -y epel-release
             dnf config-manager --enable epel
             dnf install -y sudo cmake eigen3-devel gcc gcc-c++ wget hdf5-devel

@@ -1,7 +1,6 @@
 #!/bin/bash
 set -eu
 
-brew install hdf5 llvm eigen open-mpi
 # pip install numpy==1.25.1 cython==0.29.36 # required for MOAB install (silly)
 
 # It's important to use LLVM clang rather than Apple clang
