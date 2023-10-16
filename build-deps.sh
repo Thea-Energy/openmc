@@ -48,8 +48,6 @@ popd
 # build dir is claimed by bdist_wheel
 cmake -S . -B bld \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=${OPENMC_INSTALL_DIR} \
     -DCMAKE_BUILD_TESTS=OFF \
     -DOPENMC_USE_DAGMC=ON \
 cmake --build build -j 8
-sudo cmake --build build -t install
