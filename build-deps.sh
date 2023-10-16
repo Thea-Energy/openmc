@@ -13,7 +13,7 @@ NUM_CORES=2
 MOAB_TAG='5.3.0'
 MOAB_REPO='https://bitbucket.org/fathomteam/moab/'
 
-DAGMC_TAG='v3.2.1'
+DAGMC_TAG='v3.2.2'
 DAGMC_REPO='https://github.com/svalinn/DAGMC'
 
 # MOAB
