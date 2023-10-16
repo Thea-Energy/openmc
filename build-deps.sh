@@ -40,8 +40,7 @@ cmake -S . -B build \
     -DBUILD_TALLY=ON \
     -DMOAB_DIR=/usr/local \
     -DBUILD_STATIC_LIBS=OFF
-cmake --build build -j $NUM_CORES
-sudo cmake --build build -t install
+sudo cmake --build build -j $NUM_CORES -t install
 popd
 
 # OpenMC
@@ -49,5 +48,5 @@ popd
 cmake -S . -B bld \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_BUILD_TESTS=OFF \
-    -DOPENMC_USE_DAGMC=ON \
+    -DOPENMC_USE_DAGMC=ON
 cmake --build build -j 8
