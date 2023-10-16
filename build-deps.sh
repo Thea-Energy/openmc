@@ -33,7 +33,7 @@ popd
 
 # DAGMC
 git clone --shallow-submodules --recurse-submodules --single-branch -b ${DAGMC_TAG} --depth 1 ${DAGMC_REPO}
-pushd dagmc
+pushd DAGMC
 # MANUAL: Fix isnan problem in pyne.h and pyne.cpp, changing isnan to std::isnan
 cmake -S . -B build \
     -DCMAKE_BUILD_TYPE=Release \
@@ -49,7 +49,6 @@ popd
 cmake -S . -B bld \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=${OPENMC_INSTALL_DIR} \
-    -DCMAKE_PREFIX_PATH=${DAGMC_INSTALL_DIR} \
     -DCMAKE_BUILD_TESTS=OFF \
     -DOPENMC_USE_DAGMC=ON \
 cmake --build build -j 8
