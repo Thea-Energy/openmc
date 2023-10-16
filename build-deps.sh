@@ -33,12 +33,12 @@ popd
 
 # DAGMC
 git clone --shallow-submodules --recurse-submodules --single-branch -b ${DAGMC_TAG} --depth 1 ${DAGMC_REPO}
-pushd DAGMC
+pushd dagmc
 # MANUAL: Fix isnan problem in pyne.h and pyne.cpp, changing isnan to std::isnan
 cmake -S . -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_TALLY=ON \
-    -DMOAB_DIR=${MOAB_INSTALL_DIR} \
+    -DMOAB_DIR=../moab/build \
     -DBUILD_STATIC_LIBS=OFF
 cmake --build build -j $NUM_CORES
 sudo cmake --build build -t install
