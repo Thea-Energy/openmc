@@ -9,7 +9,8 @@ set -eu
 
 NUM_CORES=2
 
-MOAB_TAG='5.5.0'
+# 5.5.0 breaks with pyne std::isnan bug
+MOAB_TAG='5.3.0'
 MOAB_REPO='https://bitbucket.org/fathomteam/moab/'
 
 DAGMC_TAG='v3.2.1'
